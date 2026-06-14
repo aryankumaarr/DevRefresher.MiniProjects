@@ -1,17 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JobTrackerApp</title>
-    <link rel="stylesheet" href="../Stylesheets/JobAppTrackerStyles.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="../Stylesheets/JobAppTrackerStyles.css" />
+  </head>
+  <body>
+    <h1 id="jobTrackingHeading">Job Tracker</h1>
     <main>
-
-        
+      <input type="text" id="searchBar"></input>
+      <section id="stats">
+        <h4>Status</h4>
+        <p>Average Salary : <span>$0</span></p>
+        <p>Highest Salary : <span>$0</span></p>
+      </section>
+      <div id="cardcontainer"></div>
+      <script src="../Scripts/JobAppTrackerScript.js"></script>
     </main>
-    <script src="../Scripts/JobAppTrackerScript.js"></script>
-</body>
+  </body>
 </html>

@@ -1,13 +1,55 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+#jobTrackingHeading {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: 200;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 4fr;
+  grid-template-areas: "section1 section2" "section3 section3";
+  justify-items: center;
+  align-items: center;
+}
+
+#searchBar {
+  grid-area: section1;
+  width: 60%;
+  max-width: 500px;
+  height: 2em;
+  border: 1.5px solid gray;
+  border-radius: 20px;
+}
+#stats {
+  grid-area: section2;
+  text-align: start;
 }
 
 
+#cardcontainer {
+  grid-area: section3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+#cardDetails{
+    display: flex;
+    text-align: start;
+    justify-content: space-around;
+}
+#cardDetails-right{
+    text-align: end;
+    flex-direction: end;
+}
