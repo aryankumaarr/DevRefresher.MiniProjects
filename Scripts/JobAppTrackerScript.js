@@ -1,10 +1,11 @@
-var cardContainer = document.querySelector("#cardcontainer");
-var stats = document.querySelectorAll("#stats span");
+let cardContainer = document.querySelector("#cardcontainer");
+let stats = document.querySelectorAll("#stats span");
+let searchBar = document.querySelector("#searchBar");
 var totalSal = 0;
 var avgSal = 0;
 var highestSal = 0;
 
-
+// DUMMY DATA
 const applications = [
   {
     id: 1,
@@ -72,7 +73,7 @@ const applications = [
   },
 ];
 
-
+// CALCULATIONS
 applications.forEach((job) => {
   totalSal += job.salary;
   if (job.salary > highestSal) {
@@ -84,13 +85,18 @@ avgSal = totalSal / applications.length;
 stats[0].textContent = "$ " + avgSal;
 stats[1].textContent = "$ " + highestSal;
 
-applications.forEach((job) => {
-  var card = document.createElement("div");
-  card.style.width = "20rem";
-  card.style.height = "auto";
-  card.style.backgroundColor = "lightgrey";
-  card.style.borderRadius = "15px";
-  card.innerHTML = `
+// DOM RENDER FUNCTIONS
+function renderCards(jobArray) {
+  // TO empty the existing container before doing anything
+  cardContainer.innerHTML = "";
+
+  jobArray.forEach((job) => {
+    var card = document.createElement("div");
+    card.style.width = "20rem";
+    card.style.height = "auto";
+    card.style.backgroundColor = "lightgrey";
+    card.style.borderRadius = "15px";
+    card.innerHTML = `
 <div id="cardDetails">
     <div id="cardDetails-left">
         <h4>${job.company}</h4>
@@ -102,8 +108,19 @@ applications.forEach((job) => {
         <p class="date-text">${job.appliedDate}</p>
     </div>
 </div>
-    
 `;
-  card.style.padding = "1rem";
-  cardContainer.append(card);
+    card.style.padding = "1rem";
+    cardContainer.append(card);
+  });
+}
+
+
+// INITIAL UI STATE so the data renders first then can be rerendered for search
+renderCards(applications); 
+// Rerendering if user uses the search bar
+searchBar.addEventListener("input", () => {
+  const filteredData = applications.filter((job) => {
+    return job.company.toLowerCase().includes(searchBar.value.toLowerCase());
+  });
+  renderCards(filteredData);
 });
