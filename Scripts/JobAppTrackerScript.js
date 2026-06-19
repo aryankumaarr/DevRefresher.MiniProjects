@@ -114,13 +114,17 @@ function renderCards(jobArray) {
   });
 }
 
-
 // INITIAL UI STATE so the data renders first then can be rerendered for search
-renderCards(applications); 
+renderCards(applications);
 // Rerendering if user uses the search bar
 searchBar.addEventListener("input", () => {
+  let value = searchBar.value.toLowerCase();
   const filteredData = applications.filter((job) => {
-    return job.company.toLowerCase().includes(searchBar.value.toLowerCase());
+    return (
+      job.company.toLowerCase().includes(value) ||
+      job.role.toLowerCase().includes(value) ||
+      job.status.toLowerCase().includes(value)
+    );
   });
   renderCards(filteredData);
 });
