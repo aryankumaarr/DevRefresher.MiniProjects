@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(59, 59, 59);
+}
+
+/* Concepts linear and radial gradient */
+
+#box{
+    height: 400px;
+    width: 400px;
+    border: 1px solid red;
+    background: linear-gradient(to right, white , red);
+}
+

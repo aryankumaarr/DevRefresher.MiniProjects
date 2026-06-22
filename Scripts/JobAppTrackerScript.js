@@ -1,6 +1,7 @@
 let cardContainer = document.querySelector("#cardcontainer");
 let stats = document.querySelectorAll("#stats span");
 let searchBar = document.querySelector("#searchBar");
+let createNewJobBtn = document.querySelector("#createJobCardInput button")
 var totalSal = 0;
 var avgSal = 0;
 var highestSal = 0;
@@ -114,6 +115,8 @@ function renderCards(jobArray) {
   });
 }
 
+
+
 // INITIAL UI STATE so the data renders first then can be rerendered for search
 renderCards(applications);
 // Rerendering if user uses the search bar
@@ -128,3 +131,8 @@ searchBar.addEventListener("input", () => {
   });
   renderCards(filteredData);
 });
+
+
+createNewJobBtn.addEventListener("click",()=>{
+  console.log("buto")
+})

@@ -10,10 +10,12 @@ body {
   width: 100%;
   text-align: center;
 }
+
 #jobTrackingHeading {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-weight: 200;
 }
+
 main {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -23,6 +25,8 @@ main {
   align-items: center;
 }
 
+/* Search Bar */
+
 #searchBar {
   grid-area: section1;
   width: 60%;
@@ -30,12 +34,23 @@ main {
   height: 2em;
   border: 1.5px solid gray;
   border-radius: 20px;
+  padding: 0 0.75rem 0 0.75rem;
 }
 #stats {
   grid-area: section2;
   text-align: start;
 }
 
+/* Job Cards */
+/* JobCArd Parent wrapper */
+
+#section3Wrapper {
+  grid-area: section3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
 
 #cardcontainer {
   grid-area: section3;
@@ -44,12 +59,39 @@ main {
   justify-content: center;
   gap: 1.5rem;
 }
-#cardDetails{
-    display: flex;
-    text-align: start;
-    justify-content: space-around;
+
+#cardDetails {
+  display: flex;
+  text-align: start;
+  justify-content: space-around;
 }
-#cardDetails-right{
-    text-align: end;
-    flex-direction: end;
+#cardDetails-right {
+  text-align: end;
+  flex-direction: end;
+}
+
+/* Job Form */
+#createJobCardContainer {
+  grid-area: section3;
+}
+#createJobCardInput {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+#createJobCardInput input {
+  border-radius: 10px;
+  height: 2em;
+  border: 1.5px solid gray;
+  border-radius: 20px;
+  padding: 0 0.75rem 0 0.75rem;
+}
+
+#createJobCardInput button {
+  border-radius: 10px;
+  height: 2em;
+  border: 1.5px solid gray;
+  border-radius: 20px;
+  padding: 0 0.75rem 0 0.75rem;
 }
