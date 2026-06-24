@@ -30,7 +30,7 @@ body{
   width: 100%;
   border: 1px solid transparent;
   /* background: linear-gradient(in hsl to right, white , red,  purple); */
-  background: radial-gradient(150px at var(--x) var(--y) , transparent 5%, rgba(0, 0, 0, 0.918) 80%);
+  background: radial-gradient(120px at var(--x) var(--y) , transparent 5%, rgba(0, 0, 0, 0.918) 80%);
 }
 
 
